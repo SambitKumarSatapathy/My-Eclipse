@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<bean id="dead" class="ioc.Cat">
+<property name="name" value="Tom"/>
+<property name="price" value="1500"/>
+</bean>
+<bean id="dick" class="ioc.Dog">
+<constructor-arg value="German Shephard" name="breed"/>
+<constructor-arg value="50000" name="price"/>
+</bean>
+<bean id="eng" class="dependency_Injection.Engine"/>
+<bean id="car" class="dependency_Injection.Car">
+<property name="engine" ref="eng"/>
+</bean>
+<bean class="dependency_Injection.Laptop">
+<constructor-arg ref="os1"/>
+</bean>
+<bean id="os1" class="dependency_Injection.OS">
+<property name="name" value="WINDOWS"/>
+</bean>
+<bean id="os2" class="dependency_Injection.OS">
+<property name="name" value="IOS"/>
+</bean>
+</beans>
